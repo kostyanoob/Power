@@ -1,4 +1,4 @@
-# Physics informed, deep-learning-based state estimation for distribution power grids
+# Physics-Informed Deep Neural Network Method for Limited Observability State Estimation of a Distribution Power Grid
 
 ![High-level block diagram of our state estimation framework](Figures/HighLevel.PNG)
 
@@ -6,7 +6,7 @@ The goal of the study is to accurately estimate the state of the distribution po
 1) Admittance matrix
 2) Power Flow Equations (AC-model)
 
-This physical information is used as a regularizer during a deep neural network (DNN) training, leading to superior estimation accuracy of the grid state. We evaluate the performance in presence of limited grid observability, where less than half of the buses report any measurement. We compare our DNN model against a persistent guess and a Weighted-Least-Squares solution.
+This physical information is used as a regularizer during a deep neural network (DNN) training, leading to superior estimation accuracy of the grid state. We evaluate the performance in presence of limited grid observability, where less than half of the buses report any measurement, and with a high penetration of photovaoltaic (PV) panels. We compare our DNN model against a persistent guess and a Weighted-Least-Squares solution.
 
 Full article: https://arxiv.org/pdf/1910.06401.pdf
 
