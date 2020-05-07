@@ -18,6 +18,17 @@ cd Power
 pip install -r requirements.txt
 ```
 
+## Citation
+If you build up on our research, please cite us:
+```
+@article{ostrometzky2019physics,
+  title={Physics-Informed Deep Neural Network Method for Limited Observability State Estimation},
+  author={Ostrometzky, Jonatan and Berestizshevsky, Konstantin and Bernstein, Andrey and Zussman, Gil},
+  journal={arXiv preprint arXiv:1910.06401},
+  year={2019}
+}
+```
+
 ## Action items for this repository
 1) write a runme.sh script for a reproduction of the experiments, add it to 
 2) consider removing generate_plots.py, as we only use generate_plots_with_wls.py.
