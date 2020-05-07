@@ -4,7 +4,7 @@ Dataset
 !Dataset/ieee37_smooth_ord_60_downsampling_factor_60*
 Deprecated_Sources
 Models
-TensorBoard
+TensorBoardLogs
 Models
 Logs
 Figures
