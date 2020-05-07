@@ -1,13 +1,15 @@
+# Directories to intentionally  exclude
 .idea
-Dataset*
+Dataset
 !Dataset/ieee37_smooth_ord_60_downsampling_factor_60*
-*.pyc
-Commands.txt
-Models
-TensorBoard*
 Deprecated_Sources
+Models
+TensorBoard
 Models
 Logs
 Figures
 !Figures/HighLevel.PNG
+# Files to intentionally exclude from git tracking
+*.pyc
+Commands.txt
 
