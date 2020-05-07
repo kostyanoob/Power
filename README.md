@@ -11,7 +11,7 @@ This physical information is used as a regularizer during a deep neural network 
 Full article: https://arxiv.org/pdf/1910.06401.pdf
 
 ## Installation
-The installaion requires Python 3.6.8. The sources and the reuquired packages can be installed by running the following code in the terminal:
+The installaion requires Python 3.6.8. The sources and the required packages can be installed by running the following code in the terminal:
 ```
 git clone https://github.com/kostyanoob/Power.git
 cd Power
