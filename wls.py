@@ -57,7 +57,7 @@ def power_flow_residual_function_real(x, *args, **kwargs):
 
     # WLS essence : Square the residual and multiply them by weights
     real_residual = np.square(real_residual) # TODO: according to the scipy.least_squares documentation, the squaring will be performed by the optimzier itself. Maybe this shouldn't be applies here!
-    real_residual *= kwargs['W'].repeat(2) if len(kwargs['W'])==N else kwargs['W'] # The weights must be replicated twice to multiply the imaginary and the real part of each residual by the same weight
+    real_residual *= kwargs['W'].repeat(2) if len(kwargs['W'])==Ycomplex.shape[0] else kwargs['W'] # The weights must be replicated twice to multiply the imaginary and the real part of each residual by the same weight
     return real_residual
 
 
