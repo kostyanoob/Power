@@ -33,5 +33,6 @@ If you build up on our research, please cite us:
 1) write a ```runme.sh``` script for a reproduction of the experiments, add it to 
 2) consider removing ```generate_plots.py```, as we only use ```generate_plots_with_wls.py```.
 3) fix the ```PFE_check.py``` script. Currently it doesn't accomodate the up-to-date load_dataset method.
-4) add a pretrained _neuralnet_ model for quickly testing it and showing chronological plots and other results. Add a command line that a user needs to run for it.
-5) add to readme.md a command line for running a _WLS_ model
+4) add a pretrained _neuralnet_ model for quickly testing it and showing chronological plots and other results.
+5) add to readme.md a command line for running a pretrained _neuralnet_ model
+6) add to readme.md a command line for running a _WLS_ model
