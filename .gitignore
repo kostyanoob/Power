@@ -1,9 +1,13 @@
+.idea
+Dataset*
+!Dataset/ieee37_smooth_ord_60_downsampling_factor_60*
+*.pyc
 Commands.txt
 Models
 TensorBoard*
 Deprecated_Sources
 Models
 Logs
-Figures/dsse*
-Figures/lambda*
-Figures/persistent*
+Figures
+!Figures/HighLevel.PNG
+
