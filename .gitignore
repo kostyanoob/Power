@@ -1,4 +1,4 @@
-# Directories to intentionally  exclude
+# Directories to intentionally exclude from git tracking
 .idea
 Dataset
 !Dataset/ieee37_smooth_ord_60_downsampling_factor_60*
