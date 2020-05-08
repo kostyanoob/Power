@@ -4,6 +4,7 @@ import matplotlib.patches as mpatches
 from matplotlib.text import TextPath
 matplotlib.use('Agg')
 import matplotlib.pylab as pylab
+import matplotlib.font_manager
 import sys
 import os
 from matplotlib import colors as mcolors

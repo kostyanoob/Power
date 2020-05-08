@@ -114,8 +114,15 @@ def solve_wls_with_power(Sobservable : np.ndarray, S0: np.ndarray, V0 : np.ndarr
             solver_argument_dict['x0'] = np.concatenate((S0[example_id],V0[example_id]),axis=-1)
             solver_argument_dict['kwargs']['Sobservable'] = Sobservable[example_id]
             solver_argument_dict['kwargs']['W'] = weights_for_WLS[example_id]
-            Vsol[example_id] = scipy.optimize.least_squares(**solver_argument_dict).x[len(S0[example_id]):]
+            try:
+                Vsol[example_id] = scipy.optimize.least_squares(**solver_argument_dict).x[len(S0[example_id]):]
+            except np.linalg.linalg.LinAlgError as err:
+                print("WLS solver encountered error:({0}). The solution reverts to the initial guess".format(err))
+                Vsol[example_id] = V0[example_id]
     else:
-        Vsol = scipy.optimize.least_squares(**solver_argument_dict).x[len(S0):]
-
+        try:
+             Vsol = scipy.optimize.least_squares(**solver_argument_dict).x[len(S0):]
+        except np.linalg.linalg.LinAlgError as err:
+             print("WLS solver encountered error:({0}). The solution reverts to the initial guess".format(err))
+             Vsol = V0
     return Vsol

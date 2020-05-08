@@ -190,7 +190,7 @@ if outfile_prefix in plot_group_list:
                 legend_key = "{}_{}_{}".format(model_type, lambda_, T)
                 Legend_dict[legend_key] = r"$DNN(T={},\lambda={})$".format(T,lambda_)
             elif model_type == "wls":
-                lambda_ = 0 # The WLS models do not generally have lambda coefficient.
+                lambda_ = int(0) # The WLS models do not generally have lambda coefficient.
                 concatenated_parameters = "{}_{}_{}_{}".format(model_type, lambda_, T, Ns)
                 legend_key = "{}_{}_{}".format(model_type, lambda_, T)
                 # Ugly hack:
