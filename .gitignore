@@ -3,9 +3,11 @@
 Dataset
 !Dataset/ieee37_smooth_ord_60_downsampling_factor_60*
 Deprecated_Sources
-Models
 TensorBoardLogs
-Models
+Models/dsse_*
+Models/Before*
+!Models/neuralnet*
+!Models/checkpoint
 Logs
 Figures
 !Figures/HighLevel.PNG

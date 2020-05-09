@@ -155,9 +155,8 @@ parser.add_argument('--no-trained-scaling', action="store_true",
                     help='If used, then scaling (multiplicative and additive) of the logits will be '
                          'disabled (At the end of the model).')
 parser.add_argument('--no-prediction-plots', action="store_true",
-                    help='If used, then no per-test-example plots will be generated during the final'
-                         'model testing. Only the chronological plot wil be generated in the '
-                         'predictions directory')
+                    help='If used, then no per-test-example plots and no chronological plot will be '
+                         'generated during the final model testing.')
 parser.add_argument('--reverse-bus-hiding-order', action="store_true",
                     help='If used, then the Ns or Nv buses will be taken with respect to a reversed'
                          'order of buses')
