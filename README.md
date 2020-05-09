@@ -41,9 +41,9 @@ The following command will evaluate the WLS model on a scenario of Ns=35 visible
 python dsse.py -model-type wls -model-name WLS_T:5_Ns:5 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -logdir Logs -T 5 -gpuid -1 -Ns 35 --wls-weights-discriminate-hidden --wls-with-power --no-prediction-plots
 ```
 ## Reproducing the article plots
-Running the following command performs a full training and evaluation of the neural network models, and evaluates them against the WLS mdoels. Finally, all the performance plots that appeared in the paper will be generated into directory "Figures/Article_figures".
+The following command performs a full training and evaluation of the neural network models, and evaluates them against the WLS mdoels. Finally, all the performance plots that appeared in the paper will be generated into directory "Figures/Article_figures".
 ```
-runme.sh
+sh runme.sh
 ```
 
 ## Citation
