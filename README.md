@@ -43,7 +43,7 @@ python dsse.py -model-type wls -model-name WLS_T:5_Ns:5 -dataset-name ieee37_smo
 ## Reproducing the article plots
 Running the following command performs a full training and evaluation of the neural network models, and evaluates them against the WLS mdoels. Finally, all the performance plots that appeared in the paper will be generated into directory "Figures/Article_figures".
 ```
-runme.sh
+sh runme.sh
 ```
 
 ## Citation
