@@ -220,13 +220,18 @@ random.seed(random_seed)
 os.environ['PYTHONHASHSEED'] = str(random_seed)
 
 if args.use_complex_tf_ops:
-    ld('Error - cannot run complex tensorflow ops. These ops were found unreliable in face of bacpropagation of the gradients.')
+    ld('Error - cannot run complex tensorflow ops. These ops were found unreliable in '
+       'face of backpropagation of the gradients.')
     sys.exit(-1)
 
 # Create necessary directories
 for dir_t in [log_outputdir, figures_outputdir, tensorboardDir]:
     if not os.path.exists(dir_t):
         os.makedirs(dir_t)
+
+#####################################################
+########## Dataset Preparation ######################
+#####################################################
 
 if (not args.no_training) and args.model_type in ['persistent', 'wls']:
     ld("Info: disabling training for a non trainable model type \"{}\".".format(args.model_type))
@@ -236,10 +241,8 @@ if args.data_transform != 'none' and args.model_type in ['wls']:
     ld("Info: reverting to non-normalized dataset for a model of a type \"{}\".".format(args.model_type))
     args.data_transform = 'none'
 
-#####################################################
-########## Dataset Preparation ######################
-#####################################################
 # Construct the X1,X2,X2_hidden,y arrays - all in rectangular (cartesian) representation.
+
 X1_train, X2_train, X2hidden_train, y_train, _,X1_test, X2_test, X2hidden_test, y_test, Y_real_np, Y_imag_np, time_steps_test = load_dataset_pop(pop,
                                                                      dtype = np_real_dtype, null_dataset = args.null_dataset)
 
@@ -286,9 +289,9 @@ assert( pop.num_target_measurements == y_train.shape[1] )
 TensorboardEnabled = TensorboardEnabled_valid or TensorboardEnabled_training
 assert(not (TensorboardEnabled_valid and TensorboardEnabled_training))
 
-#####################################################
-########## Neural Net Construction ##################
-#####################################################
+##############################################################################
+########## Neural Net / Weighted Least Squares Construction ##################
+##############################################################################
 graph = tf.Graph()
 with graph.as_default():
     tf.set_random_seed(random_seed)
