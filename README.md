@@ -19,24 +19,24 @@ pip install -r requirements.txt
 ```
 
 ## Quick Start
-The following options are available for you to quickly evaluate state estimation on a particular scenario. Each of the options below evaluates a certain model with a certain model-name. Once the evaluation is complete, various plots will be generated in the  directory, check them out. 
-To produce more elaborate visualizations, including per-example visuualization and a chronological visualization: remove the ```--no-prediction-plots``` flag, then run the evaluation and check out "Figures/Predictions_<model-name>" directory.
+The following options (1-3) allow you to quickly evaluate state estimation on a particular scenario. Each of the options below evaluates a certain model with a certain _model-name_. Once the evaluation is complete, various plots will be generated in the "Figures" directory.
+To produce more elaborate visualizations, including per-example visualization and a chronological visualization of the test timesteps: remove the ```--no-prediction-plots``` flag, then run the evaluation and check out "Figures/Predictions\__model-name_" directory.
 
-### Evaluate a pre-trained DNN model
+### (1) Evaluating a pre-trained DNN model
 We provide a pre-trained model inside the Models directory. You can evaluate it using the following command:
 ```
 python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0 --no-training --restore-session -model-name-for-loading neuralnet_T:5_Ns:5_lambda:2.0 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -n-epochs 300 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots
 ```
 
-### Training DNN model from scratch and evaluating it
-The following command will train and then evaluate the DNN model on a scenario of Ns=35 visible nodes using time-window of T=5 time steps and a PFE reguarization coefficient (lambda) of 2.0: 
+### (2) Training DNN model from scratch and evaluating it
+The following command will train and then evaluate the DNN model on a scenario of Ns=35 visible buses using time-window of T=5 time steps and a PFE reguarization coefficient (lambda) of 2.0: 
 ```
 python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0_from_scratch -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -n-epochs 300 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots
 ```
 Loss and MSE curve plots will be available at the "Figures" directory upon a successful training termination.
  
-### Evaluating WLS model
-The following command will evaluate the WLS model on a scenario of Ns=35 visible nodes using time-window of T=5 time steps. 
+### (3) Evaluating WLS model
+The following command will evaluate the WLS model on a scenario of Ns=35 visible buses using time-window of T=5 time steps. 
 ```
 python dsse.py -model-type wls -model-name WLS_T:5_Ns:5 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -logdir Logs -T 5 -gpuid -1 -Ns 35 --wls-weights-discriminate-hidden --wls-with-power --no-prediction-plots
 ```
@@ -45,7 +45,7 @@ The following command performs a full training and evaluation of the neural netw
 ```
 sh runme.sh
 ```
-
+Note: the above script employs 4 different GPUs for the purpose of DNN trainings. You can adjust the number of GPUs by changing the gpuid parameters in runme.sh.
 ## Citation
 If you build up on our research, please cite us:
 ```
