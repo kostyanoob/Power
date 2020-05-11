@@ -802,13 +802,13 @@ if not args.no_training:
                     isAnnotatedMin=True, validStr=validStr)
 
         ld("Test (average over all nodes) MSE: {:.3e} MAE: {:.3e}".format(testMSE.mean(),testMAE.mean()))
-        for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
-            ld(" - For Re(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode], testPerNodeMaeVector.mean()[2*nnode]))
-            ld(" - For Im(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode+1], testPerNodeMaeVector.mean()[2*nnode+1]))
+        # for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
+        #     ld(" - For Re(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode], testPerNodeMaeVector.mean()[2*nnode]))
+        #     ld(" - For Im(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode+1], testPerNodeMaeVector.mean()[2*nnode+1]))
         ld("Denormalized Test (average over all nodes) MSE: {:.3e} MAE: {:.3e}".format(denormalized_testMSE.mean(),denormalized_testMAE.mean()))
-        for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
-            ld(" - For Mag(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode], denormalized_testPerNodeMaeVector.mean()[2*nnode]))
-            ld(" - For Ang(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode+1], denormalized_testPerNodeMaeVector.mean()[2*nnode+1]))
+        # for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
+        #     ld(" - For Mag(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode], denormalized_testPerNodeMaeVector.mean()[2*nnode]))
+        #     ld(" - For Ang(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode+1], denormalized_testPerNodeMaeVector.mean()[2*nnode+1]))
 
 
         testLossStr = "Test MSE: normalized: {:.20f} denormalized {:.20f}".format(testMSE.mean(),denormalized_testMSE.mean())
@@ -1013,14 +1013,14 @@ with tf.Session(graph=graph, config=tfcfg) as session:
                               extras_dict)
 
     ld("Test (average over all nodes) MSE: {:.3e} MAE: {:.3e}".format(testMSE.mean(),testMAE.mean()))
-    for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
-        ld(" - For Re(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode], testPerNodeMaeVector.mean()[2*nnode]))
-        ld(" - For Im(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode+1], testPerNodeMaeVector.mean()[2*nnode+1]))
+    # for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
+    #     ld(" - For Re(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode], testPerNodeMaeVector.mean()[2*nnode]))
+    #     ld(" - For Im(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, testPerNodeMseVector.mean()[2*nnode+1], testPerNodeMaeVector.mean()[2*nnode+1]))
 
     ld("Denormalized Test (average over all nodes) MSE: {:.3e} MAE: {:.3e}".format(denormalized_testMSE.mean(),denormalized_testMAE.mean()))
-    for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
-        ld(" - For Mag(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode], denormalized_testPerNodeMaeVector.mean()[2*nnode]))
-        ld(" - For Ang(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode+1], denormalized_testPerNodeMaeVector.mean()[2*nnode+1]))
+    # for nnode in range(pop.num_target_measurements//pop.num_measurements_per_phasor):
+    #     ld(" - For Mag(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode], denormalized_testPerNodeMaeVector.mean()[2*nnode]))
+    #     ld(" - For Ang(V{}): Test MSE {:.3e}; Test MAE {:.3e}".format(nnode + 1, denormalized_testPerNodeMseVector.mean()[2*nnode+1], denormalized_testPerNodeMaeVector.mean()[2*nnode+1]))
 
     # Detailed log prints for MSE and MAE
     MSE_per_example_File.write("Test MSE normalized :\n")

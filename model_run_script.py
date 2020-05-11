@@ -12,7 +12,6 @@ different network hyperparameters (aka network depths)
 ###                                                 ###
 #######################################################
 
-Kostya Berestizshevsky
 '''
 import pdb
 import logging

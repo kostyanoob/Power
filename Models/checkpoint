@@ -1,2 +1,2 @@
-model_checkpoint_path: "neuralnet_T:5_Ns:5_lambda:2.0.ckpt"
-all_model_checkpoint_paths: "neuralnet_T:5_Ns:5_lambda:2.0.ckpt"
+model_checkpoint_path: "dsse_ieee37_smooth_ord_60_downsampling_factor_60_neuralnet_seed:31_bs:50_lambda:20.0_T:5_Ns:6_Nv:0.ckpt"
+all_model_checkpoint_paths: "dsse_ieee37_smooth_ord_60_downsampling_factor_60_neuralnet_seed:31_bs:50_lambda:20.0_T:5_Ns:6_Nv:0.ckpt"
