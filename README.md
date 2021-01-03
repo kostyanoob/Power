@@ -40,14 +40,14 @@ evaluation and check out "Figures/Predictions\__model-name_" directory.
 We provide a pre-trained model inside the Models directory. You can evaluate it using the following 
 command:
 ```
-python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0 --no-training --restore-session -model-name-for-loading neuralnet_T:5_Ns:5_lambda:2.0 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -n-epochs 300 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots
+python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0 --no-training -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots -logdir Logs/neural_net_evaluate_pretrained_model
 ```
 
 ### (2) Training DNN model from scratch and evaluating it
 The following command will train and then evaluate the DNN model on a scenario of Ns=35 visible 
 buses using time-window of T=5 time steps and a PFE reguarization coefficient (lambda) of 2.0: 
 ```
-python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0_from_scratch -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -n-epochs 300 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots
+python dsse.py -model-type neuralnet -model-name neuralnet_T:5_Ns:5_lambda:2.0_from_scratch -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -n-epochs 300 -data-transform standardize -T 5 -equations-regularizer 2.0 -seed 1 -Ns 35 -gpuid 0 --no-prediction-plots -logdir Logs/neural_net_train_from_scratch
 ```
 Loss and MSE curve plots will be available at the "Figures" directory upon a successful training 
 termination.
@@ -56,7 +56,7 @@ termination.
 The following command will evaluate the WLS model on a scenario of Ns=35 visible buses using 
 time-window of T=5 time steps. 
 ```
-python dsse.py -model-type wls -model-name WLS_T:5_Ns:5 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -logdir Logs -T 5 -gpuid -1 -Ns 35 --wls-weights-discriminate-hidden --wls-with-power --no-prediction-plots
+python dsse.py -model-type wls -model-name WLS_T:5_Ns:5 -dataset-name ieee37_smooth_ord_60_downsampling_factor_60 -logdir Logs -T 5 -gpuid -1 -Ns 35 --wls-weights-discriminate-hidden --wls-with-power --no-prediction-plots -logdir Logs/wls_evaluation
 ```
 ## Reproducing the article plots
 The following command performs a full training and evaluation of the neural network models, 
