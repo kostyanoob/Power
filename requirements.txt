@@ -2,7 +2,7 @@ xlsxwriter==1.1.8
 numpy==1.15.4
 pandas==0.23.4
 openpyxl==2.6.2
-tensorflow==1.12.0
+tensorflow==2.5.1
 tensorflow-gpu==1.14.0
 matplotlib==3.0.2
 scipy==1.1.0
